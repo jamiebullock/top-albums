@@ -2,7 +2,7 @@
 {% block body %}
 <ol class=entries>
 {% for album in albums %}
-<li class={{ loop.cycle('odd', 'even') }}>{{ album.title }} - {{ album.artist }}</li>
+<li class={{ loop.cycle('odd', 'even') }}>{{ album.title }} &mdash; {{ album.artist }}</li>
 {% endfor %}
 </ol>
 
