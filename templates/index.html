@@ -1,0 +1,8 @@
+<!doctype html>
+<title>>Top Albums</title>
+<ul>
+{% for row in rows %}
+<li>{{ row.title }} - {{ row.artist }}</li>
+{% endfor %}
+</ul>
+
