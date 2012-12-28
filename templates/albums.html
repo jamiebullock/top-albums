@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
 {% block body %}
-<ul>
+<ol class=entries>
 {% for album in albums %}
-<li>{{ album.title }} - {{ album.artist }}</li>
+<li class={{ loop.cycle('odd', 'even') }}>{{ album.title }} - {{ album.artist }}</li>
 {% endfor %}
-</ul>
+</ol>
 
 
 {% endblock %}
