@@ -2,10 +2,7 @@
 {% block body %}
 
 <form action={{ url_for('list_albums')}} method=post>
-    <dl>
-        <dt>Username:
-        <dd><input type=text name=user>
-    </dl>
+    Enter your <a href="http://last.fm">last.fm</a> username: <input class=user-entry type=text name=user>
 </form>
 
 {% endblock %}
