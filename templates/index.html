@@ -1,8 +1,11 @@
-<!doctype html>
-<title>>Top Albums</title>
-<ul>
-{% for row in rows %}
-<li>{{ row.title }} - {{ row.artist }}</li>
-{% endfor %}
-</ul>
+{% extends "layout.html" %}
+{% block body %}
 
+<form action={{ url_for('list_albums')}} method=post>
+    <dl>
+        <dt>Username:
+        <dd><input type=text name=user>
+    </dl>
+</form>
+
+{% endblock %}

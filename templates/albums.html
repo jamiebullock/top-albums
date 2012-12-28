@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body %}
+<ul>
+{% for album in albums %}
+<li>{{ album.title }} - {{ album.artist }}</li>
+{% endfor %}
+</ul>
+
+
+{% endblock %}
