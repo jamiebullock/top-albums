@@ -1,17 +1,21 @@
 <!doctype html>
-<meta name="viewport" content="width=device-width, initial-scale=.4" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>>Top Albums 2012</title>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
 <div class=page>
     <h1>{% if username %}<a href=http://last.fm/user/{{ username }}>{{ username }}</a>'s {% endif %} Top Albums 2012</h1>
-    {% for message in get_flashed_messages() %}
-    <div class=flash>{{ message }}</div>
-    {% endfor %}
-    <div class=main-content>
-        {% block body %}{% endblock %}
-    </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul id=flashes>
+            {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+    {% block body %}{% endblock %}
     <div id="credit">
         A New Year hack by <a href="http://twitter.com/jamiebullock">@jamiebullock</a>
     </div>
