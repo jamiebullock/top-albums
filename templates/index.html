@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 {% block body %}
 
-<form action={{ url_for('get_user')}} method=post>
-    Enter your <a href="http://last.fm">last.fm</a> username: <input class=user-entry type=text name=user autofocus>
-</form>
+    <form id=username action={{ url_for('get_user')}} method=post>
+        Enter your <a href="http://last.fm">last.fm</a> username: <input class=user-entry type=text name=user autofocus>
+    </form>
 
 {% endblock %}

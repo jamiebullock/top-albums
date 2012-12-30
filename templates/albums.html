@@ -1,10 +1,12 @@
 {% extends "layout.html" %}
 {% block body %}
-<ol class=entries>
+<div id=albums>
+<ol>
 {% for album in albums %}
-<li class={{ loop.cycle('odd', 'even') }}>{{ album.title }} &mdash; {{ album.artist }}</li>
+<li class={{ loop.cycle('odd', 'even') }}><a href="{{ album.link }}">{{ album.title }}</a> &mdash; {{ album.artist }}</li>
 {% endfor %}
 </ol>
+</div>
 
 <div id=twitter-share>
     <a href="https://twitter.com/share" class="twitter-share-button" data-text="My top albums of 2012:" data-size="large">Tweet</a>
