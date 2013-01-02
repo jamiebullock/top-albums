@@ -1,9 +1,54 @@
 <!doctype html>
+
+<head>
+<script type='text/javascript'>
+
+    function showElement(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+    function playButtonClicked(el) {
+        showElement('progress-bar');
+        var outerDiv = el.childNodes[0];
+        var innerDiv = outerDiv.childNodes[0];
+
+        if (outerDiv.className == "play-button-outer") {
+            outerDiv.className = "play-button-pause-outer";
+        } else {
+            outerDiv.className = "play-button-outer";
+        }
+
+        if (innerDiv.className == "play-button-inner") {
+            innerDiv.className = "play-button-pause-inner";
+        } else {
+            innerDiv.className = "play-button-inner";
+        }
+    }
+
+</script>
+
+</head>
+
+<!-- <head> -->
+<!--     <script> -->
+<!--         // window.onload = addTenPercent(); -->
+<!--  -->
+<!--         function addTenPercent() { -->
+<!--             var bar = document.getElementById("progress-bar"); -->
+<!--             setInterval(addTenPercent, 1000); -->
+<!--             bar.value += 10; -->
+<!--         }; -->
+<!--     </script> -->
+<!--  -->
+<!-- </head> -->
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>>Top Albums 2012</title>
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
+
+
+<div class="triangle-with-shadow"></div>
 <div class=page>
     <h1>{% if username %}<a href=http://last.fm/user/{{ username }}>{{ username }}</a>'s {% endif %} Top Albums 2012</h1>
     {% with messages = get_flashed_messages(with_categories=true) %}
