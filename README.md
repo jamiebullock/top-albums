@@ -23,7 +23,6 @@ To terminate the web server and exit the virtualenv:
 - ctrl-C
 - `deactivate`
 
-
 ## To deploy to Heroku
 
 - It should be sufficient to type: `git push heroku master`
