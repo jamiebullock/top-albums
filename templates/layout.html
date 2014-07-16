@@ -7,33 +7,11 @@
 	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}"/>
 	<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css"/>
 	
-	
-    <script src="{{ url_for('static', filename='jquery-1.5.1.min.js') }}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-    <script src="{{ url_for('static', filename='token.js') }}"></script>
-    <script src="{{ url_for('static', filename='rdio.js') }}"></script>
-    <script src="{{ url_for('static', filename='app.js') }}"></script>
 
 </head>
 
-<!-- <head> -->
-<!--     <script> -->
-<!--         // window.onload = addTenPercent(); -->
-<!--  -->
-<!--         function addTenPercent() { -->
-<!--             var bar = document.getElementById("progress-bar"); -->
-<!--             setInterval(addTenPercent, 1000); -->
-<!--             bar.value += 10; -->
-<!--         }; -->
-<!--     </script> -->
-<!--  -->
-<!-- </head> -->
-
-<div id="apiswf"></div>
-<div id="position"></div>
-<div class="triangle-with-shadow"></div>
 <div class=page>
-    <h1>{% if username %}<a href=http://last.fm/user/{{ username }}>{{ username }}</a>'s {% endif %} Top Albums 2012</h1>
+    <h1>{% if username %}<a href=http://last.fm/user/{{ username }}>{{ username }}</a>'s {% endif %} Top Albums</h1>
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
         <ul id=flashes>
