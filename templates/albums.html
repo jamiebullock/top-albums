@@ -1,26 +1,14 @@
 {% extends "layout.html" %}
 {% block body %}
 <div id="albums">
-	<ol>
-	{% for album in albums %}
-	    <li class={{ loop.cycle('odd', 'even') }}>
-	        <a href="{{ album.link }}">{{ album.title }}</a> &mdash; {{ album.artist }}
-	        <div class=hide-on-mobile>
-	            <button type=button class=play-button onclick=playButtonClicked(this) ><div class=play-button-outer><div class=play-button-inner></div></div></button>
-				<div class=progress-bar>
-					<ul>
-						<li>
-							<progress max=100 value=60>
-								<strong>Progress: 60% done.</strong>
-							</progress>
-				        </li>
-					</ul> 
-				</div>
-	        </div>
-	    </li>
+    <ol>
+        {% for album in albums %}
+        <li class={{ loop.cycle('odd', 'even') }}>
+        <a href="{{ album.link }}">{{ album.title }}</a> &mdash; {{ album.artist }}
+        </li>
 
-	{% endfor %}
-	</ol>
+        {% endfor %}
+    </ol>
 </div>
 
 <div id="twitter-share">
