@@ -18,6 +18,12 @@ To run the application locally:
 - Start the server: `python app.py`
 - Navigate to [http://0.0.0.0:5000](http://0.0.0.0:5000)
 
+To terminate the web server and exit the virtualenv:
+
+- ctrl-C
+- `deactivate`
+
+
 ## To deploy to Heroku
 
 - It should be sufficient to type: `git push heroku master`
